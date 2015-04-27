@@ -80,7 +80,7 @@ class Hello(object):
         return toprint
     #@+node:2014fall.20141215194146.1791: *3* index
     @cherrypy.expose
-    def index(self, N=20 ,N1=20 ,N2=20 ,N3=20, M=4, P=20,midx=400):
+    def index(self, N=20 ,N1=20 ,N2=20 ,N3=20,N4=20, M=4, P=20,midx=400):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -101,6 +101,7 @@ class Hello(object):
     第2齒數:<input type=text name=N1><br />
     第3齒數:<input type=text name=N2><br />
     第4齒數:<input type=text name=N3><br />
+    第5齒數:<input type=text name=N4><br />
     模數:<input type=text name=M><br />
     壓力角:<input type=text name=P><br />
     <input type=submit value=send>
@@ -874,7 +875,7 @@ class Hello(object):
     #@+node:2014python.20150420214549.1830: *3* mygeartest2
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
-    def mygeartest2(self, N=20 ,N1=20 ,N2=20 ,N3=20, M=5, P=15):
+    def mygeartest2(self, N=20 ,N1=20 ,N2=20 ,N3=20,N4=20, M=5, P=15):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -892,6 +893,7 @@ class Hello(object):
     第2齒數:'''+str(N1)+'''<output name=N1 for=str(N1)><br />
     第3齒數:'''+str(N2)+'''<output name=N2 for=str(N2)><br />
     第4齒數:'''+str(N3)+'''<output name=N3 for=str(N3)><br />
+    第5齒數:'''+str(N4)+'''<output name=N4 for=str(N4)><br />
     模數:'''+str(M)+'''<output name=M for=str(M)><br />
     壓力角:'''+str(P)+'''<output name=P for=str(P)><br />
 
@@ -924,6 +926,8 @@ class Hello(object):
     n_g3 = '''+str(N2)+'''
     # 第4齒輪齒數
     n_g4 = '''+str(N3)+'''
+    # 第5齒輪齒數
+    n_g5 = '''+str(N4)+'''
 
 
 
@@ -932,6 +936,7 @@ class Hello(object):
     rp_g2 = m*n_g2/2
     rp_g3 = m*n_g3/2
     rp_g4 = m*n_g4/2
+    rp_g5 = m*n_g5/2
 
     # 繪圖第1齒輪的圓心座標
     x_g1 = 400
@@ -945,6 +950,9 @@ class Hello(object):
     # 第4齒輪的圓心座標
     x_g4 = x_g1 + rp_g1 + 2*rp_g2 + 2*rp_g3+rp_g4
     y_g4 = y_g1
+    # 第5齒輪的圓心座標
+    x_g5 = x_g1 + rp_g1 + 2*rp_g2 + 2*rp_g3+2*rp_g4+rp_g5
+    y_g5 = y_g1
 
 
     # 將第1齒輪順時鐘轉 90 度
@@ -997,6 +1005,17 @@ class Hello(object):
     # put it back
     ctx.translate(-x_g4, -y_g4)
     spur.Spur(ctx).Gear(x_g4, y_g4, rp_g4, n_g4, pa, "green")
+    ctx.restore()
+
+    #齒輪5
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g5, y_g5)
+    # rotate to engage
+    ctx.rotate(-pi/2-pi/n_g5+(pi+pi/n_g4)*n_g4/n_g5-(pi+pi/n_g3)*n_g3/n_g5+(pi+pi/n_g2)*n_g2/n_g5)
+    # put it back
+    ctx.translate(-x_g5, -y_g5)
+    spur.Spur(ctx).Gear(x_g5, y_g5, rp_g5, n_g5, pa, "purple")
     ctx.restore()
 
     # 按照上面三個正齒輪的囓合轉角運算, 隨後的傳動齒輪轉角便可依此類推, 完成6個齒輪的囓合繪圖
