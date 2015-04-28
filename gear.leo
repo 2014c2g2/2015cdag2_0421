@@ -18,7 +18,7 @@
 <v t="2014fall.20141212095015.1774" a="E"><vh>@path ./</vh>
 <v t="2014fall.20141212095015.1775" a="E"
 expanded="2014fall.20141212095015.1777,"><vh>@file wsgi.py</vh></v>
-<v t="office.20150407074720.1"
+<v t="office.20150407074720.1" a="E"
 expanded="office.20150407074720.3,"><vh>@file gear.py</vh></v>
 <v t="2014fall.20141212095015.1780"><vh>@edit setup.py</vh></v>
 </v>
@@ -36,7 +36,7 @@ expanded="office.20150407074720.3,"><vh>@file gear.py</vh></v>
 <v t="2014python.20150420214549.1888"><vh>@edit scrum_4.md</vh></v>
 <v t="2014python.20150420214549.1890"><vh>@edit product_owner.md</vh></v>
 </v>
-<v t="2015.20150330144929.1763" a="E"><vh>以下為參考資料</vh>
+<v t="2015.20150330144929.1763"><vh>以下為參考資料</vh>
 <v t="2015.20150330144929.1764"><vh>Brython 正齒輪程式</vh></v>
 </v>
 </vnodes>
