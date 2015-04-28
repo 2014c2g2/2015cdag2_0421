@@ -26,9 +26,33 @@ midx=400在x軸方向移動400。
 在第一齒輪下方打上
 第2齒數:cinput type=text name=N1和br /
 如下圖所示↓
+![](https://copy.com/SXZps2O71dTmOTpu)
 
 接下來進入 mygeartest2
 如圖所示，輸入第二齒所要的顏色跟數據 
 Gear(midx, midy, rp, n=20, pa=20, color="black"):
 第2齒輪齒數
 n_g2 = '''+str(N1)+'''
+![](https://copy.com/bU9yiSYZ2PVSPlTh)
+
+寫出計算第二齒輪的節圓半徑
+rp_g2 = m*n_g2/2
+第2齒輪的圓心座標
+x_g2 = x_g1 + rp_g1 + rp_g2
+y_g2 = y_g1
+x=第一齒的圓心座標+第一齒的節圓半徑+第二齒的節圓半徑
+y=y軸不變所以跟齒輪一一樣
+![](https://copy.com/Dfw4ng8rtaRki14R)
+
+如下圖所示，接下來在第一齒角度後面輸入
+# 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
+ctx.save()
+# translate to the origin of second gear
+ctx.translate(x_g2, y_g2)
+# rotate to engage
+ctx.rotate(-pi/2-pi/n_g2)
+# put it back
+ctx.translate(-x_g2, -y_g2)
+spur.Spur(ctx).Gear(x_g2, y_g2, rp_g2, n_g2, pa, "black")
+ctx.restore()
+![](https://copy.com/vdGQ9ucqYNFkOCF0)
