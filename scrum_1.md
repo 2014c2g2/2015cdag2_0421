@@ -9,6 +9,7 @@ JavaScript是弱類型語言，一種基於對象和事件驅動的腳本語言�
 
 當我們要使用JavaScript canvas繪圖，並在網頁中顯示繪製結果，也要使用Brython來轉換。
 
+![](https://copy.com/KsWlBQzpWfivPd7u)
 
 
 # 由 scrum_1 組員40223102所寫的專案一考試報告
