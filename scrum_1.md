@@ -45,13 +45,13 @@ y=y軸不變所以跟齒輪一一樣
 ![](https://copy.com/Dfw4ng8rtaRki14R)
 
 如下圖所示，接下來在第一齒角度後面輸入
-# 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
+ 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
 ctx.save()
-# translate to the origin of second gear
+ translate to the origin of second gear
 ctx.translate(x_g2, y_g2)
-# rotate to engage
+ rotate to engage
 ctx.rotate(-pi/2-pi/n_g2)
-# put it back
+ put it back
 ctx.translate(-x_g2, -y_g2)
 spur.Spur(ctx).Gear(x_g2, y_g2, rp_g2, n_g2, pa, "black")
 ctx.restore()
