@@ -6,3 +6,5 @@
 如下圖:
 
 ![](https://copy.com/V0TpZrbo8FDquMbW)
+
+由於專案一的github上傳是由許芸瑄統整心得放至gitbook，所以整組心得皆為許芸瑄的紀錄。
