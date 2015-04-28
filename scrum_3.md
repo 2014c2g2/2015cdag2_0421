@@ -1,2 +1,36 @@
 # 由 scrum_3 組員40223107所寫的專案一考試報告
-說明假如要採用多齒輪組進行減速的情況下, 可以有哪些數學計算公式必須透過協同分析運算的方法, 才可以確定各組員所需要提供的 2D 繪圖功能。
+我負責的地方是七個齒輪嚙合中，第三齒輪的部分。
+首先開啟ger.leo →進入index 
+在第二齒輪下方打上第3齒數:input type=text name=N3   br /
+接下來進入 mygeartest2
+輸入第三齒所要的顏色跟數據 
+Gear(midx, midy, rp, n=20, pa=20, color="red"):
+
+
+第3齒輪齒數
+n_g3 = '''+str(N2)+'''
+寫出計算第三齒輪的節圓半徑
+rp_g3 = m*n_g3/2
+第3齒輪的圓心座標
+x_g3 = x_g1+ rp_g1 + rp_g2 +rp_g2 + rp_g3
+y_g3 = y_g2
+x=第一齒的圓心座標+第一齒的節圓半徑+第二齒的節圓半徑+第二齒的節圓半徑+第三齒的節圓半徑
+水平軸不變Y=Y
+接下來在第三齒角度後面輸入
+
+
+將第3齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第2齒輪進行囓合
+ctx.save()
+
+ translate to the origin of second gear
+ctx.translate(x_g3, y_g3)
+
+rotate to engage
+ctx.rotate(-pi/2-pi/n_g3)
+
+put it back
+ctx.translate(-x_g3, -y_g3)
+spur.Spur(ctx).Gear(x_g3, y_g3, rp_g3, n_g3, pa, "red")
+ctx.restore()
+
+好了之後save檔案，上傳到近端測試結果沒問題後，接下來上傳到github後完成
