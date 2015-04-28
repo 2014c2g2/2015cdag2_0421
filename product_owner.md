@@ -17,7 +17,12 @@
 
 先了解三顆齒輪運轉的架構，並開始做後續的4顆齒輪嚙合程式，完成後並教各組員如何操作，在讓組員操作好的齒輪嚙合一一上傳到github中
 
-1.先在index中做七顆齒輪的齒數表單
+1.先在index中建立七顆齒輪的齒數表單
 
 ![](https://copy.com/pACMaoXJ4kpPvEtx)
 
+2.開始做後續4顆齒輪嚙合的分析流程
+
+3.先在mygeartest2下導入spur.py模組
+
+![](https://copy.com/KnQpQzCYszRrIz4Q)
