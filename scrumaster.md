@@ -8,3 +8,6 @@
 ![](https://copy.com/V0TpZrbo8FDquMbW)
 
 由於專案一的github上傳是由許芸瑄統整心得放至gitbook，所以整組心得皆為許芸瑄的紀錄。
+
+# 由 scrumaster 組員40223105所寫的六齒輪嚙合考試報告
+我的工作內容是將第六顆齒輪與前五顆齒輪相嚙合。
