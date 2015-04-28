@@ -36,3 +36,5 @@ spur.Spur(ctx).Gear(x_g3, y_g3, rp_g3, n_g3, pa, "red")
 ctx.restore()
 ![](https://copy.com/xkRGGhCgiFM386EA)
 好了之後save檔案，上傳到近端測試結果沒問題後，接下來上傳到github後完成
+
+![](https://copy.com/VFQKXMWXznSOZMxV)
