@@ -38,7 +38,7 @@ midx=400在x軸方向移動400。
 
 
 
-# 由 scrum_1 組員40223102所寫的七齒輪嚙合考試報告
+# 由 scrum_1 組員40223104所寫的七齒輪嚙合考試報告
 這次我負責的地方是七個齒輪嚙合中，第二齒的部分。
 首先開啟ger.leo →進入index 
 在第一齒輪下方打上
@@ -77,3 +77,22 @@ ctx.restore()
 
 以下就是完成的七齒輪嚙合圖!
 ![](https://copy.com/VFQKXMWXznSOZMxV)
+
+# 由 scrum_1 組員40223102所寫的七齒輪嚙合考試報告
+這次我負責的地方是個齒輪嚙合中，第四個齒輪和前面三個齒輪嚙合的部分。
+
+在idex目錄的地方增加一行
+"第4齒數:<input type=text name=N3><br />"
+![](https://copy.com/FArtiR08qp3ubKc3)
+
+之後到 mygeartest2
+齒輪繪圖的部分增加第四個齒輪的定義 n_g4 = '''+str(N3)+'''
+
+第四個齒輪的節圓半徑 rp_g4 = m*n_g4/2，
+還有定義第四個齒輪的圓心座標 
+x_g4 = x_g1 + rp_g1 + 2*rp_g2 + 2* rp_g3 + rp_g4
+y_g4 = y_g1
+![](https://copy.com/fmGAv2sX2YTPF9yA)
+
+然後是第四個齒輪和前面齒輪嚙合所需要轉的角度
+![](https://copy.com/fmGAv2sX2YTPF9yA)
