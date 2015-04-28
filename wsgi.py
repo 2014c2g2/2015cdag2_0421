@@ -78,137 +78,15 @@ class Hello(object):
     # 有 self 的方法為類別中的成員方法, Python 程式透過此一 self 在各成員方法間傳遞物件內容
     def index_orig(self, toprint="Hello World!"):
         return toprint
-    #@+node:2015.20150428094136.1687: *3* index
+    #@+node:2014fall.20141215194146.1791: *3* index
     @cherrypy.expose
-    def index(self):
+    def index(self, N=20 ,N1=20 ,N2=20 ,N3=20,N4=20 ,N5=20 ,M=4, P=20,midx=400):
         outstring = '''
-    班級:四設計二甲
-    學號:40223105
-    姓名:侯云婷
-    '''
-        return outstring
-    #@+node:2015.20150428094136.1689: *3* spur
-    @cherrypy.expose
-    def spur(self, N=20 ,M=4, P=20 ):
-        outstring = '''
-<<<<<<< HEAD
-=======
-    <!DOCTYPE html> 
-    <html>
-    <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8">
-    <!-- 載入 brython.js -->
-    <script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"></script>
-    <script src="/static/Cango2D.js" type="text/javascript"></script>
-    <script src="/static/gearUtils-04.js" type="text/javascript"></script>
-    </head>
-    <!-- 啟動 brython() -->
-    <body onload="brython()">
-        
-    <h1>輸入下列的表單，顯示出七顆齒輪嚙合圖形</h1>
-    <form method=POST action=mygeartest2>
-    第1齒數:<input type=text name=N><br />
-    第2齒數:<input type=text name=N1><br />
-    第3齒數:<input type=text name=N2><br />
-    第4齒數:<input type=text name=N3><br />
-    第5齒數:<input type=text name=N4><br />
-    第6齒數:<input type=text name=N5><br />
-    第7齒數:<input type=text name=N6><br />
-    模數:<input type=text name=M><br />
-    壓力角:<input type=text name=P><br />
-    <input type=submit value=send>
-
-    </form>
-    <hr>
->>>>>>> cd71306dedb9a279220aeae4460ca024d3e90477
-
-    <h1>輸入下列的表單，顯示出齒輪圖形</h1>
-    <form method=POST action=spuraction>
-    齒數:<input type=text name=N><br />
-    模數:<input type=text name=M><br />
-    壓力角:<input type=text name=P><br />
-    <input type=submit value=send>
-
-    </form>
-    <hr>
-
-    '''
-        return outstring
-    #@+node:2015.20150428094136.1685: *3* spuraction
-    @cherrypy.expose
-    def spuraction(self, N=20 ,M=4, P=20 ):
-        outstring = '''
-
-    <form method=POST action=spuraction>
-    齒數:'''+str(N)+'''<output name=N for=str(N)><br />
-    模數:'''+str(M)+'''<output name=M for=str(M)><br />
-    壓力角:'''+str(P)+'''<output name=P for=str(P)><br />
+    <form method=POST action=index>
+    學號:40223131<br />
     </form>
 
     '''
-        return outstring
-    #@+node:2015.20150428094136.1695: *3* drawspur
-    @cherrypy.expose
-    def drawspur(self, N=20 ,M=4, P=20 ):
-        outstring = '''
-
-    <h1>輸入下列的表單，顯示出齒輪圖形</h1>
-    <form method=POST action=drawspuraction>
-    齒數:<input type=text name=N><br />
-    模數:<input type=text name=M><br />
-    壓力角:<input type=text name=P><br />
-    <input type=submit value=send>
-
-    </form>
-    <hr>
-
-    '''
-        return outstring
-    #@+node:2015.20150428094136.1697: *3* drawspuraction
-    @cherrypy.expose
-    # N 為齒數, M 為模數, P 為壓力角
-    def drawspuraction(self, N=20 , M=5, P=15):
-        outstring = '''
-    # 以下利用 spur.py 程式進行繪圖, 接下來的協同設計運算必須要配合使用者的需求進行設計運算與繪圖
-    # 其中並將工作分配給其他組員建立類似 spur.py 的相關零件繪圖模組
-    # midx, midy 為齒輪圓心座標, rp 為節圓半徑, n 為齒數, pa 為壓力角, color 為線的顏色
-    # Gear(midx, midy, rp, n=20, pa=20, color="black"):
-    # 模數決定齒的尺寸大小, 囓合齒輪組必須有相同的模數與壓力角
-    # 壓力角 pa 單位為角度
-    pa = 20
-    # m 為模數
-    m = '''+str(M)+'''
-    # 齒輪齒數
-    n_g1 = '''+str(N)+'''
-
-
-
-    # 計算兩齒輪的節圓半徑
-    rp_g1 = m*n_g1/2
-
-    # 繪圖第1齒輪的圓心座標
-    x_g1 = 400
-    y_g1 = 400
-
-    # 將第1齒輪順時鐘轉 90 度
-    # 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
-    ctx.save()
-    # translate to the origin of second gear
-    ctx.translate(x_g1, y_g1)
-    # rotate to engage
-    ctx.rotate(pi/2)
-    # put it back
-    ctx.translate(-x_g1, -y_g1)
-    spur.Spur(ctx).Gear(x_g1, y_g1, rp_g1, n_g1, pa, "blue")
-    ctx.restore()
-
-
-    </script>
-    <canvas id="plotarea" width="1200" height="1200"></canvas>
-    </body>
-    </html>
-    '''
-
         return outstring
     #@+node:2014fall.20141212095015.1779: *3* hello
     @cherrypy.expose
@@ -405,7 +283,7 @@ class Hello(object):
     #@+node:2015.20150330144929.1765: *3* mygeartest
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
-    def mygeartest(self, N=20, M=10, P=20):
+    def mygeartest(self, N=None, M=None, P=None):
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -696,11 +574,7 @@ class Hello(object):
     #@+node:2014python.20150420214549.1830: *3* mygeartest2
     @cherrypy.expose
     # N 為齒數, M 為模數, P 為壓力角
-<<<<<<< HEAD
-    def mygeartest2(self, N=20 , M=5, P=15):
-=======
     def mygeartest2(self, N=20 ,N1=20 ,N2=20 ,N3=20,N4=20, N5=20,N6=10, M=5, P=15):
->>>>>>> cd71306dedb9a279220aeae4460ca024d3e90477
         outstring = '''
     <!DOCTYPE html> 
     <html>
@@ -715,15 +589,12 @@ class Hello(object):
     <body onload="brython()">
 
     第1齒數:'''+str(N)+'''<output name=N for=str(N)><br />
-<<<<<<< HEAD
-=======
     第2齒數:'''+str(N1)+'''<output name=N1 for=str(N1)><br />
     第3齒數:'''+str(N2)+'''<output name=N2 for=str(N2)><br />
     第4齒數:'''+str(N3)+'''<output name=N3 for=str(N3)><br />
     第5齒數:'''+str(N4)+'''<output name=N4 for=str(N4)><br />
     第6齒數:'''+str(N5)+'''<output name=N5 for=str(N5)><br />
     第7齒數:'''+str(N6)+'''<output name=N5 for=str(N6)><br />
->>>>>>> cd71306dedb9a279220aeae4460ca024d3e90477
     模數:'''+str(M)+'''<output name=M for=str(M)><br />
     壓力角:'''+str(P)+'''<output name=P for=str(P)><br />
     齒數比:'''+str(N)+''':'''+str(N1)+''':'''+str(N2)+''':'''+str(N3)+''':'''+str(N4)+''':'''+str(N5)+''':'''+str(N6)+'''<br />
@@ -751,8 +622,6 @@ class Hello(object):
     m = '''+str(M)+'''
     # 第1齒輪齒數
     n_g1 = '''+str(N)+'''
-<<<<<<< HEAD
-=======
     # 第2齒輪齒數
     n_g2 = '''+str(N1)+'''
     # 第3齒輪齒數
@@ -765,27 +634,21 @@ class Hello(object):
     n_g6 ='''+str(N5)+'''
     # 第7齒輪齒數
     n_g7 ='''+str(N6)+'''
->>>>>>> cd71306dedb9a279220aeae4460ca024d3e90477
 
 
 
     # 計算兩齒輪的節圓半徑
     rp_g1 = m*n_g1/2
-<<<<<<< HEAD
-=======
     rp_g2 = m*n_g2/2
     rp_g3 = m*n_g3/2
     rp_g4 = m*n_g4/2
     rp_g5= m*n_g5/2
     rp_g6= m*n_g6/2
     rp_g7= m*n_g7/2
->>>>>>> cd71306dedb9a279220aeae4460ca024d3e90477
 
     # 繪圖第1齒輪的圓心座標
     x_g1 = 400
     y_g1 = 400
-<<<<<<< HEAD
-=======
     # 第2齒輪的圓心座標, 假設排列成水平, 表示各齒輪圓心 y 座標相同
     x_g2 = x_g1 + rp_g1 + rp_g2
     y_g2 = y_g1
@@ -809,7 +672,6 @@ class Hello(object):
     x_g7= x_g1 + rp_g1 + 2*rp_g2 + 2* rp_g3 +2* rp_g4+2* rp_g5+2*rp_g6+rp_g7
     y_g7= y_g1
 
->>>>>>> cd71306dedb9a279220aeae4460ca024d3e90477
 
     # 將第1齒輪順時鐘轉 90 度
     # 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
@@ -827,8 +689,6 @@ class Hello(object):
     spur.Spur(ctx).Gear(x_g1, y_g1, rp_g1, n_g1, pa, "blue")
     ctx.restore()
 
-<<<<<<< HEAD
-=======
     # 將第2齒輪逆時鐘轉 90 度之後, 再多轉一齒, 以便與第1齒輪進行囓合
 
     ctx.font = "10px Verdana";
@@ -931,12 +791,131 @@ class Hello(object):
     ctx.translate(-x_g7, -y_g7)
     spur.Spur(ctx).Gear(x_g7, y_g7, rp_g7, n_g7, pa, "Brown")
     ctx.restore()
->>>>>>> cd71306dedb9a279220aeae4460ca024d3e90477
 
     </script>
     <canvas id="plotarea" width="3000" height="3000"></canvas>
     </body>
     </html>
+    '''
+
+        return outstring
+    #@+node:2014python.20150428101042.1759: *3* drawspur
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def drawspur (self, N=20, M=5, P=15):
+        outstring = '''
+
+    <h1>輸入下列的表單，導入drawspuraction方法</h1>
+    <form method=POST action=drawspuraction>
+    齒數:<input type=text name=N><br />
+    模數:<input type=text name=M><br />
+    壓力角:<input type=text name=P><br />
+    <input type=submit value=send>
+    </form>
+    <hr>
+
+
+    '''
+
+        return outstring
+    #@+node:2014python.20150428101042.1761: *3* spur
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def spur (self, N=20, M=5, P=15):
+        outstring = '''
+        
+    <h1>輸入下列的表單，導入spuraction方法</h1>
+    <form method=POST action=spuraction>
+    齒數:<input type=text name=N><br />
+    模數:<input type=text name=M><br />
+    壓力角:<input type=text name=P><br />
+    <input type=submit value=send>
+    </form>
+    <hr>
+
+    '''
+
+        return outstring
+    #@+node:2014python.20150428101042.1763: *3* drawspuraction
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def drawspuraction (self, N=20, M=5, P=20):
+        outstring = '''
+    <!DOCTYPE html> 
+    <html>
+    <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <!-- 載入 brython.js -->
+    <script type="text/javascript" src="/static/Brython3.1.1-20150328-091302/brython.js"></script>
+    <script src="/static/Cango2D.js" type="text/javascript"></script>
+    <script src="/static/gearUtils-04.js" type="text/javascript"></script>
+    </head>
+    <!-- 啟動 brython() -->
+    <body onload="brython()">
+
+    <!-- 以下為 canvas 畫圖程式 -->
+    <script type="text/python">
+    # 從 browser 導入 document
+    from browser import document
+    from math import *
+    # 請注意, 這裡導入位於 Lib/site-packages 目錄下的 spur.py 檔案
+    import spur
+
+    # 準備在 id="plotarea" 的 canvas 中繪圖
+    canvas = document["plotarea"]
+    ctx = canvas.getContext("2d")
+
+    # 以下利用 spur.py 程式進行繪圖, 接下來的協同設計運算必須要配合使用者的需求進行設計運算與繪圖
+    # 其中並將工作分配給其他組員建立類似 spur.py 的相關零件繪圖模組
+    # midx, midy 為齒輪圓心座標, rp 為節圓半徑, n 為齒數, pa 為壓力角, color 為線的顏色
+    # Gear(midx, midy, rp, n=20, pa=20, color="black"):
+    # 模數決定齒的尺寸大小, 囓合齒輪組必須有相同的模數與壓力角
+    # 壓力角 pa 單位為角度
+    pa = 20
+    # m 為模數
+    m = '''+str(M)+'''
+    # 第1齒輪齒數
+    n_g1 = '''+str(N)+'''
+
+
+
+    # 計算兩齒輪的節圓半徑
+    rp_g1 = m*n_g1/2
+
+    # 繪圖第1齒輪的圓心座標
+    x_g1 = 400
+    y_g1 = 400
+
+    # 將第1齒輪順時鐘轉 90 度
+    # 使用 ctx.save() 與 ctx.restore() 以確保各齒輪以相對座標進行旋轉繪圖
+
+
+    ctx.save()
+    # translate to the origin of second gear
+    ctx.translate(x_g1, y_g1)
+    # rotate to engage
+    # put it back
+    ctx.translate(-x_g1, -y_g1)
+    spur.Spur(ctx).Gear(x_g1, y_g1, rp_g1, n_g1, pa, "blue")
+    ctx.restore()
+
+    </script>
+    <canvas id="plotarea" width="3000" height="3000"></canvas>
+    </body>
+    </html>
+    '''
+
+        return outstring
+    #@+node:2014python.20150428101042.1765: *3* spuraction
+    @cherrypy.expose
+    # N 為齒數, M 為模數, P 為壓力角
+    def spuraction (self, N=20, M=5, P=15):
+        outstring = '''
+        
+    齒數:'''+str(N)+'''<output name=N for=str(N)><br />
+    模數:'''+str(M)+'''<output name=M for=str(M)><br />
+    壓力角:'''+str(P)+'''<output name=P for=str(P)><br />
+
     '''
 
         return outstring
