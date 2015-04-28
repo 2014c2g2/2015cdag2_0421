@@ -10,5 +10,5 @@
    * [scrum_3](scrum_3.md)
    * [scrum_4](scrum_4.md)
 * [scrum_1](SUMMARY.md)
-* surum_2
+* [surum_2](surum2.md)
 
