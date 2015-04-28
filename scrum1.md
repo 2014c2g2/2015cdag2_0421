@@ -1,4 +1,4 @@
-# scrum1
+# scrum_1
 
 # 由 scrum_1 組員40223102、40223104所寫的JavaScript canvas 繪圖概念與指令討論(未完成)
 
