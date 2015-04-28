@@ -14,4 +14,6 @@
 index的部分是將第六齒的輸入表單加上，而mygeartest2部分則是將第六齒的節圓半徑、圓心座標及旋轉角度加上，由於第六齒為逆的90度減掉齒寬，再減掉第六齒對第五齒的減速比，加上第五齒對第四齒的減速比，減掉第四齒對第三齒的減速比，以此類推下去。
 如下圖:
 ![](https://copy.com/3frV3acDpqTOojoc)
+
+
 ![](https://copy.com/umCgEtd6gyiRaNLk)
