@@ -1,4 +1,4 @@
-# 由 scrum_1 組員40223102、40223104所寫的JavaScript canvas 繪圖概念與指令討論
+# 由 scrum_1 組員40223102、40223104所寫的JavaScript canvas 繪圖概念與指令討論(未完成)
 
 說明Brython協同繪圖模式下
 與JavaScript canvas繪圖對應的相關概念與可用的程式
