@@ -15,6 +15,7 @@
 
 要修改之前要從GITHUB上CLONE下來後，開啟gear.leo 後進入index。 
 在第四齒輪下方打上第五齒數，
+![](https://copy.com/DMjA1kh64AsIQpYP)
 再接下來進入 "mygeartest2"
 輸入第五齒所要的顏色跟數據 
 Gear(x_g5,y_g5,rp_g5,n_g5,pa,"purple")
