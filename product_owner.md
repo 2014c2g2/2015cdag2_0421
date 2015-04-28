@@ -39,4 +39,4 @@
 
 ![](https://copy.com/a3IYj0e2Iz0UxexS)
 
-7.
+7.轉換座標運算結果為(-pi/2-pi/n_g4+(pi+pi/n_g3)*n_g3/n_g4-(pi+pi/n_g2)*n_g2/n_g4)，因為各齒輪之間是層層對應的，所以他們的齒輪為
