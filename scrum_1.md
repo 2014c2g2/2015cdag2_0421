@@ -56,3 +56,6 @@ ctx.translate(-x_g2, -y_g2)
 spur.Spur(ctx).Gear(x_g2, y_g2, rp_g2, n_g2, pa, "black")
 ctx.restore()
 ![](https://copy.com/vdGQ9ucqYNFkOCF0)
+
+以下就是完成的七齒輪嚙合圖!
+![](https://copy.com/VFQKXMWXznSOZMxV)
