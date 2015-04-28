@@ -82,7 +82,7 @@ ctx.restore()
 這次我負責的地方是個齒輪嚙合中，第四個齒輪和前面三個齒輪嚙合的部分。
 
 在idex目錄的地方增加一行
-"第4齒數:<input type=text name=N3><br />"
+第4齒數:input type=text name=N3 <br /
 ![](https://copy.com/FArtiR08qp3ubKc3)
 
 之後到 mygeartest2
