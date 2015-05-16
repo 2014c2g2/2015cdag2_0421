@@ -2,7 +2,7 @@
 
 * [introduction](README.md)
 * [目錄](SUMMARY.md)
-   * 期中報告
+   * [期中報告](SUMMARY.md)
    * [product_owner](product_owner.md)
    * [scrumaster](scrumaster.md)
    * [scrum_1](scrum_1.md)
