@@ -3,6 +3,7 @@
 // implementation [3, 1, 1, 'final', 0]
 // version compiled from commented, indented source files at github.com/brython-dev/brython
 // modified for UTF-8 identifier, 2015.03.31 version
+// this is the experimental version for under Creo embeded IE browser
 var __BRYTHON__=__BRYTHON__ ||{}
 ;(function($B){
 var scripts=document.getElementsByTagName('script')
